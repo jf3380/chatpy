@@ -51,7 +51,9 @@
 
       socket.on('response', function(msg){
         console.log(msg)
-        $("#mensajes").append("<li><strong>" + msg.username + "</strong>: " + msg.mensage + "</li>");
+        if (typeof msg.username !== 'undefined'){
+          $("#mensajes").append("<li><strong>" + msg.username + "</strong>: " + msg.mensage + "</li>");
+        }
       });
 
     </script>
